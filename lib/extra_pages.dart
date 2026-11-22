@@ -12,10 +12,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'data.dart';
 
-const Color sakinahGreen = Color(0xFF087B53);
-const Color sakinahDeep = Color(0xFF07583F);
-const Color sakinahMint = Color(0xFFE9F5EF);
-const Color sakinahInk = Color(0xFF20352C);
+const Color sakinahGreen = Color(0xFF176B50);
+const Color sakinahDeep = Color(0xFF104A3A);
+const Color sakinahMint = Color(0xFFE8F1E9);
+const Color sakinahInk = Color(0xFF1D3028);
 
 String normalizeArabic(String input) {
   return input
