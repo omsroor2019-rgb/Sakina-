@@ -1,8 +1,8 @@
 name: Build Sakinah Android APK
 
 on:
-  push:
-    branches: [main, master]
+  # Run manually after all source files have been uploaded. This avoids
+  # starting and cancelling a build for every single file commit.
   workflow_dispatch:
 
 permissions:
@@ -10,7 +10,7 @@ permissions:
 
 concurrency:
   group: sakinah-android-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -78,6 +78,9 @@ jobs:
 
       - name: Resolve dependencies
         run: flutter pub get
+
+      - name: Verify generated Android project
+        run: test -f android/app/src/main/AndroidManifest.xml
 
       - name: Analyze Dart source
         run: flutter analyze --no-pub --no-fatal-infos --no-fatal-warnings
